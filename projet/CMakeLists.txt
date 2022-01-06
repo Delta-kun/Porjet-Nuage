@@ -1,91 +1,27 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required (VERSION 2.8)
+project (tinyraytracer)
 
-project(openGL_CPE LANGUAGES CXX)
+include(CheckCXXCompilerFlag)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
+function(enable_cxx_compiler_flag_if_supported flag)
+    string(FIND "${CMAKE_CXX_FLAGS}" "${flag}" flag_already_set)
+    if(flag_already_set EQUAL -1)
+        check_cxx_compiler_flag("${flag}" flag_supported)
+        if(flag_supported)
+            set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${flag}" PARENT_SCOPE)
+        endif()
+        unset(flag_supported CACHE)
+    endif()
+endfunction()
 
-find_package(OpenGL REQUIRED)
-if(NOT ${OPENGL_FOUND})
-  message("OpenGL not found")
-endif()
+enable_cxx_compiler_flag_if_supported("-Wall")
+enable_cxx_compiler_flag_if_supported("-Wextra")
+enable_cxx_compiler_flag_if_supported("-pedantic")
+enable_cxx_compiler_flag_if_supported("-std=c++14")
+enable_cxx_compiler_flag_if_supported("-O3")
+enable_cxx_compiler_flag_if_supported("-fopenmp")
 
-find_package(GLEW)
-if(NOT ${GLEW_FOUND} OR APPLE)
+file(GLOB SOURCES *.h *.cpp)
 
-  message(WARNING "Glew not found, manual compilation of glew added to the project")
+add_executable(${PROJECT_NAME} ${SOURCES})
 
-  option(glew-cmake_BUILD_SHARED "Build the shared glew library" OFF)
-  option(ONLY_LIBS "Do not build executables" ON)
-
-  add_subdirectory(extern/glew)
-  include_directories(${CMAKE_SOURCE_DIR}/extern/glew/include)
-  set(USED_GLEW_LIBRARY libglew_static)
-else()
-  include_directories(${GLEW_INCLUDE_DIRS})
-  set(USED_GLEW_LIBRARY ${GLEW_LIBRARIES})
-endif()
-
-find_package(GLUT)
-if(NOT ${GLUT_FOUND})
-
-  message(WARNING "Glut not found, manual compilation of Glut added to the project")
-
-  option(FREEGLUT_BUILD_SHARED_LIBS "Build FreeGLUT shared library." OFF)
-  option(FREEGLUT_BUILD_DEMOS "Build FreeGLUT demos." OFF )
-  option(FREEGLUT_PRINT_ERRORS "Lib prints errors to stderr" OFF)
-  option(FREEGLUT_PRINT_WARNINGS "Lib prints warnings to stderr" OFF)
-  option(INSTALL_PDB "Also install .pdb files" OFF)
-
-  add_subdirectory(extern/freeglut)
-  include_directories(${CMAKE_SOURCE_DIR}/extern/freeglut/include)
-  set(USED_GLUT_LIBRARY freeglut_static)
-else()
-  include_directories(${GLUT_INCLUDE_DIRS})
-  set(USED_GLUT_LIBRARY ${GLUT_LIBRARY})
-endif()
-
-include_directories(${CMAKE_SOURCE_DIR}/extern)
-
-add_subdirectory(${CMAKE_SOURCE_DIR}/src/tools)
-include_directories(${CMAKE_SOURCE_DIR}/src/tools)
-
-foreach(dir_n RANGE 1 2)
-  set(dir "programme_${dir_n}")
-  
-  message("Programme ${dir}" )
-
-  file(GLOB_RECURSE source_files "src/${dir}/*.cpp")
-  file(GLOB_RECURSE header_files "src/${dir}/*.h" "src/${dir}/*.hpp") 
-  file(GLOB_RECURSE shader_files "shaders/*.vert" "shaders/*.geom" "shaders/*.frag" "shaders/*.comp")
-
-  message("Source files")
-  foreach(line IN LISTS source_files)
-    message("${line}")
-  endforeach()
-
-  message("Header files")
-  foreach(line IN LISTS header_files)
-    message("${line}")
-  endforeach()
-
-  message("Shader files")
-  foreach(line IN LISTS shader_files)
-    message("${line}")
-  endforeach()
-
-  if (WIN32)
-    set(LINK_FLAGS )
-  elseif (APPLE)
-    set(LINK_FLAGS )
-  elseif (UNIX)
-    set(LINK_FLAGS )
-    add_definitions(-g -Wall -Wextra -Wno-comment -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable -DCORRECTION)
-  endif ()
-
-  add_executable(${dir} ${source_files} ${header_files} ${shader_files})
-  target_link_libraries(${dir} ${USED_GLEW_LIBRARY} ${USED_GLUT_LIBRARY} ${OPENGL_LIBRARIES} ${LINK_FLAGS} tools)
-  set_target_properties(${dir} PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
-endforeach()
-
-set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT programme_1)
