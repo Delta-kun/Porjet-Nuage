@@ -1,0 +1,31 @@
+[
+{
+  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7  -DCORRECTION -I../extern -I../src/tools  -g   -g -Wall -Wextra -Wno-comment -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable -g -Wall -Wextra -Wno-comment -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable -std=gnu++11 -o CMakeFiles/programme_1.dir/src/programme_1/main.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/src/programme_1/main.cpp\"",
+  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/src/programme_1/main.cpp"
+},
+
+{
+  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7  -DCORRECTION -I../extern -I../src/tools  -g   -g -Wall -Wextra -Wno-comment -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable -g -Wall -Wextra -Wno-comment -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable -std=gnu++11 -o CMakeFiles/programme_2.dir/src/programme_2/main.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/src/programme_2/main.cpp\"",
+  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/src/programme_2/main.cpp"
+},
+
+{
+  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I../extern  -g   -std=gnu++11 -o src/tools/CMakeFiles/tools.dir/camera.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/src/tools/camera.cpp\"",
+  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/src/tools/camera.cpp"
+},
+
+{
+  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I../extern  -g   -std=gnu++11 -o src/tools/CMakeFiles/tools.dir/glhelper.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/src/tools/glhelper.cpp\"",
+  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/src/tools/glhelper.cpp"
+},
+
+{
+  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I../extern  -g   -std=gnu++11 -o src/tools/CMakeFiles/tools.dir/mesh.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/src/tools/mesh.cpp\"",
+  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/src/tools/mesh.cpp"
+}
+]

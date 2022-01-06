@@ -1,0 +1,52 @@
+#version 430
+
+layout(local_size_x = 100) in;
+
+layout(std430, binding = 1) buffer positionBlock
+{
+    float pos[];
+};
+
+layout(std430, binding = 2) buffer vitesseBlock
+{
+    float vit[];
+};
+
+float rand2D(in vec2 co){
+    return fract(sin(dot(co.xy ,vec2(12.9898,78.233))) * 43758.5453);
+};
+
+void main() {
+    float dt = 0.016f;
+    float m = 0.05;
+    float g = 9.81;
+    uint id = gl_GlobalInvocationID.x;
+
+    // Retour position initiale si y<-1.0f
+    /*
+    if (pos[3*id+1]<-1.0f){
+            vit[3*id] = 2*(rand2D(vec2(pos[3*id],pos[3*id]))-0.5);
+            vit[3*id+1] = (rand2D(vec2(pos[3*id],pos[3*id+1]))+0.5); //vitesse verticale aléatoire positive
+            vit[3*id+2] = 2*(rand2D(vec2(pos[3*id],pos[3*id+2]))-0.5);
+            pos[3*id] = 0.0f;
+            pos[3*id+1] = 0.0f;
+            pos[3*id+2] = 0.0f;
+        }
+        else{
+            for (int i=0; i<3; i++){
+                pos[3*id+i] += vit[3*id+i]*dt;
+            }
+            vit[3*id+1] += -m*g*dt;
+        }
+        */
+    // Plan horizontal avec rebonds
+    if (pos[3*id+1]<-1.0f){
+            vit[3*id+1] = -vit[3*id+1] - m*g*dt; //rebond sur plan horizontal
+        }
+    else{
+        vit[3*id+1] += -m*g*dt;
+    }
+    for (int i=0; i<3; i++){
+        pos[3*id+i] += vit[3*id+i]*dt;
+    }
+}
