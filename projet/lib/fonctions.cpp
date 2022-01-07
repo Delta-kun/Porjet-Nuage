@@ -3,7 +3,9 @@
 #include <cmath>
 #include "fonctions.h"
 
-m = mat3(0.0f, 0.8f, 0.6f,
+using namespace cpe;
+
+mat3 m = mat3(0.0f, 0.8f, 0.6f,
         -0.8f, 0.36f, -0.48f,
         -0.6f, -0.48f, 0.64f);
 
@@ -23,7 +25,9 @@ float noise (vec3 x)
     vec3 p = vec3(floor(x.x()),floor(x.y()),floor(x.z()));
     vec3 f = x-p;
 
-    f = f*f*(3.0f-2.0f*f);
+    vec3 f_tmp= 2.0f*f; 
+    f_tmp = 3.0f-f_tmp;
+    f = f*f*f_tmp;
 
     float n = p.x()+p.y()*57.0f+113.0f*p.z();
 
@@ -36,7 +40,7 @@ float noise (vec3 x)
             linterp(hash(n+113.0f),hash(n+114.0f),f.x()),
             linterp(hash(n+170.0f),hash(n+171.0f),f.x()),
             f.y()),
-        f.z())
+        f.z());
 
     return res;
 }
@@ -52,6 +56,6 @@ float fbm(vec3 p)
 
 float scene(vec3 p)
 {
-    float length = sqrt(pow(p.x(),2),pow(p.y(),2),pow(p.z(),2));
+    float length = sqrt(pow(p.x(),2)+pow(p.y(),2)+pow(p.z(),2));
     return 0.1f-length*0.5f+fbm(p*0.3);
 }

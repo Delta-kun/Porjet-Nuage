@@ -120,15 +120,6 @@ vec3& operator+=(vec3& v, float const& f)
     return v;
 }
 
-vec3& operator+=(float const& f, vec3& v)
-{
-    v.x()+=f;
-    v.y()+=f;
-    v.z()+=f;
-
-    return v;
-}
-
 vec3& operator+=(vec3& lhs,vec3 const& rhs)
 {
     lhs.x()+=rhs.x();
@@ -138,15 +129,6 @@ vec3& operator+=(vec3& lhs,vec3 const& rhs)
 }
 
 vec3& operator-=(vec3& v, float const& f)
-{
-    v.x()-=f;
-    v.y()-=f;
-    v.z()-=f;
-
-    return v;
-}
-
-vec3& operator-=(float const& f, vec3& v)
 {
     v.x()-=f;
     v.y()-=f;
@@ -171,6 +153,14 @@ vec3& operator*=(vec3& v,float const s)
     return v;
 }
 
+vec3& operator*=(vec3& v1,vec3 const& v2)
+{
+    v1.x()*=v2.x();
+    v1.y()*=v2.y();
+    v1.z()*=v2.z();
+    return v1;
+}
+
 vec3& operator/=(vec3& v,float const s)
 {
     v.x()/=s;
@@ -186,10 +176,40 @@ vec3 operator+(vec3 const& lhs,vec3 const& rhs)
     return temp;
 }
 
+vec3 operator+(vec3 const& v,float const& f)
+{
+    vec3 temp=v;
+    temp+=f;
+    return temp;
+}
+
+vec3 operator+(float const& f, vec3 const& v)
+{
+    vec3 temp=v;
+    temp+=f;
+    return temp;
+}
+
 vec3 operator-(vec3 const& lhs,vec3 const& rhs)
 {
     vec3 temp=lhs;
     temp-=rhs;
+    return temp;
+}
+
+vec3 operator-(vec3 const& v,float const& f)
+{
+    vec3 temp=v;
+    temp-=f;
+    return temp;
+}
+
+vec3 operator-(float const& f, vec3& v)
+{
+    vec3 temp=v;
+    temp.x() = f-temp.x();
+    temp.y() = f-temp.y();
+    temp.z() = f-temp.z();
     return temp;
 }
 
@@ -203,6 +223,13 @@ vec3 operator*(vec3 const& v,float const s)
 vec3 operator*(float const s,vec3 const& v)
 {
     return v*s;
+}
+
+vec3 operator*(vec3 const& v1,vec3 const& v2)
+{
+    vec3 temp=v1;
+    temp*=v2;
+    return temp;
 }
 
 vec3 operator/(vec3 const& v,float const s)

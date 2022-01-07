@@ -114,26 +114,30 @@ private:
 
 /** Vector addition */
 vec3& operator+=(vec3& v, float const& f);
-vec3& operator+=(float const& f, vec3& v);
 vec3& operator+=(vec3& lhs,vec3 const& rhs);
 /** Vector substraction */
 vec3& operator-=(vec3& v, float const& f);
-vec3& operator-=(float const& f, vec3& v);
 vec3& operator-=(vec3& lhs,vec3 const& rhs);
 /** Multiplication by a scalar */
+vec3& operator*=(vec3& v1,vec3 const& v2);
 vec3& operator*=(vec3& v,float s);
 /** Division by a scalar */
 vec3& operator/=(vec3& v,float s);
 
 
 /** Vector addition */
+vec3 operator+(vec3& v, float const& f);
+vec3 operator+(float const& f, vec3& v);
 vec3 operator+(vec3 const& lhs,vec3 const& rhs);
 /** Vector substraction */
+vec3 operator-(vec3& v, float const& f);
+vec3 operator-(float const& f, vec3& v);
 vec3 operator-(vec3 const& lhs,vec3 const& rhs);
 
 /** Multiplication by a scalar operator */
 vec3 operator*(vec3 const& v,float s);
 /** Multiplication by a scalar operator */
+vec3 operator*(vec3 const& v1,vec3 const& v2);
 vec3 operator*(float s,vec3 const& v);
 /** Division by a scalar operator */
 vec3 operator/(vec3 const& v,float s);

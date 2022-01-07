@@ -1,7 +1,9 @@
 cmake_minimum_required (VERSION 2.8)
-project (tinyraytracer)
+project (nuage)
 
 include(CheckCXXCompilerFlag)
+
+include_directories(${CMAKE_SOURCE_DIR}/lib/)
 
 function(enable_cxx_compiler_flag_if_supported flag)
     string(FIND "${CMAKE_CXX_FLAGS}" "${flag}" flag_already_set)
@@ -22,8 +24,9 @@ enable_cxx_compiler_flag_if_supported("-O3")
 enable_cxx_compiler_flag_if_supported("-fopenmp")
 
 file(GLOB SOURCES *.h *.cpp)
+file(GLOB_RECURSE source_files "lib/*.cpp")
+file(GLOB_RECURSE header_files "lib/*.h" "lib/*.hpp")
+file(GLOB_RECURSE source_common "common/*.cpp")
+file(GLOB_RECURSE header_common "common/*.h" "lib/*.hpp") 
 
-add_executable(${PROJECT_NAME} ${SOURCES})
-
-#add_subdirectory(${CMAKE_SOURCE_DIR}/lib)
-#include_directories(${CMAKE_SOURCE_DIR}/lib)
+add_executable(${PROJECT_NAME} ${SOURCES} ${source_files} ${header_files} ${source_common} ${header_common})

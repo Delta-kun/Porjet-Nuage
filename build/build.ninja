@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: tinyraytracer
+# Project: nuage
 # Configuration: Debug
 # =============================================================================
 
@@ -40,34 +40,83 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
   restat = 1
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
-# Object build statements for EXECUTABLE target tinyraytracer
+# Object build statements for EXECUTABLE target nuage
 
 
 #############################################
-# Order-only phony target for tinyraytracer
+# Order-only phony target for nuage
 
-build cmake_object_order_depends_target_tinyraytracer: phony
-build CMakeFiles/tinyraytracer.dir/tinyraytracer.cpp.o: CXX_COMPILER__tinyraytracer /fs03/share/users/ronan.adam/home/Documents/Annee5/Projet$ Nuage/projet/tinyraytracer.cpp || cmake_object_order_depends_target_tinyraytracer
-  DEP_FILE = CMakeFiles/tinyraytracer.dir/tinyraytracer.cpp.o.d
+build cmake_object_order_depends_target_nuage: phony
+build CMakeFiles/nuage.dir/nuage.cpp.o: CXX_COMPILER__nuage /fs03/share/users/ronan.adam/home/Documents/Annee5/Projet$ Nuage/projet/nuage.cpp || cmake_object_order_depends_target_nuage
+  DEP_FILE = CMakeFiles/nuage.dir/nuage.cpp.o.d
   FLAGS = -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g
-  OBJECT_DIR = CMakeFiles/tinyraytracer.dir
-  OBJECT_FILE_DIR = CMakeFiles/tinyraytracer.dir
+  INCLUDES = -I"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib"
+  OBJECT_DIR = CMakeFiles/nuage.dir
+  OBJECT_FILE_DIR = CMakeFiles/nuage.dir
+build CMakeFiles/nuage.dir/lib/fonctions.cpp.o: CXX_COMPILER__nuage /fs03/share/users/ronan.adam/home/Documents/Annee5/Projet$ Nuage/projet/lib/fonctions.cpp || cmake_object_order_depends_target_nuage
+  DEP_FILE = CMakeFiles/nuage.dir/lib/fonctions.cpp.o.d
+  FLAGS = -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g
+  INCLUDES = -I"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib"
+  OBJECT_DIR = CMakeFiles/nuage.dir
+  OBJECT_FILE_DIR = CMakeFiles/nuage.dir/lib
+build CMakeFiles/nuage.dir/lib/mat3.cpp.o: CXX_COMPILER__nuage /fs03/share/users/ronan.adam/home/Documents/Annee5/Projet$ Nuage/projet/lib/mat3.cpp || cmake_object_order_depends_target_nuage
+  DEP_FILE = CMakeFiles/nuage.dir/lib/mat3.cpp.o.d
+  FLAGS = -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g
+  INCLUDES = -I"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib"
+  OBJECT_DIR = CMakeFiles/nuage.dir
+  OBJECT_FILE_DIR = CMakeFiles/nuage.dir/lib
+build CMakeFiles/nuage.dir/lib/vec2.cpp.o: CXX_COMPILER__nuage /fs03/share/users/ronan.adam/home/Documents/Annee5/Projet$ Nuage/projet/lib/vec2.cpp || cmake_object_order_depends_target_nuage
+  DEP_FILE = CMakeFiles/nuage.dir/lib/vec2.cpp.o.d
+  FLAGS = -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g
+  INCLUDES = -I"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib"
+  OBJECT_DIR = CMakeFiles/nuage.dir
+  OBJECT_FILE_DIR = CMakeFiles/nuage.dir/lib
+build CMakeFiles/nuage.dir/lib/vec3.cpp.o: CXX_COMPILER__nuage /fs03/share/users/ronan.adam/home/Documents/Annee5/Projet$ Nuage/projet/lib/vec3.cpp || cmake_object_order_depends_target_nuage
+  DEP_FILE = CMakeFiles/nuage.dir/lib/vec3.cpp.o.d
+  FLAGS = -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g
+  INCLUDES = -I"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib"
+  OBJECT_DIR = CMakeFiles/nuage.dir
+  OBJECT_FILE_DIR = CMakeFiles/nuage.dir/lib
+build CMakeFiles/nuage.dir/lib/vec4.cpp.o: CXX_COMPILER__nuage /fs03/share/users/ronan.adam/home/Documents/Annee5/Projet$ Nuage/projet/lib/vec4.cpp || cmake_object_order_depends_target_nuage
+  DEP_FILE = CMakeFiles/nuage.dir/lib/vec4.cpp.o.d
+  FLAGS = -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g
+  INCLUDES = -I"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib"
+  OBJECT_DIR = CMakeFiles/nuage.dir
+  OBJECT_FILE_DIR = CMakeFiles/nuage.dir/lib
+build CMakeFiles/nuage.dir/common/backtrace.cpp.o: CXX_COMPILER__nuage /fs03/share/users/ronan.adam/home/Documents/Annee5/Projet$ Nuage/projet/common/backtrace.cpp || cmake_object_order_depends_target_nuage
+  DEP_FILE = CMakeFiles/nuage.dir/common/backtrace.cpp.o.d
+  FLAGS = -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g
+  INCLUDES = -I"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib"
+  OBJECT_DIR = CMakeFiles/nuage.dir
+  OBJECT_FILE_DIR = CMakeFiles/nuage.dir/common
+build CMakeFiles/nuage.dir/common/exception_cpe.cpp.o: CXX_COMPILER__nuage /fs03/share/users/ronan.adam/home/Documents/Annee5/Projet$ Nuage/projet/common/exception_cpe.cpp || cmake_object_order_depends_target_nuage
+  DEP_FILE = CMakeFiles/nuage.dir/common/exception_cpe.cpp.o.d
+  FLAGS = -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g
+  INCLUDES = -I"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib"
+  OBJECT_DIR = CMakeFiles/nuage.dir
+  OBJECT_FILE_DIR = CMakeFiles/nuage.dir/common
+build CMakeFiles/nuage.dir/common/file_tools.cpp.o: CXX_COMPILER__nuage /fs03/share/users/ronan.adam/home/Documents/Annee5/Projet$ Nuage/projet/common/file_tools.cpp || cmake_object_order_depends_target_nuage
+  DEP_FILE = CMakeFiles/nuage.dir/common/file_tools.cpp.o.d
+  FLAGS = -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g
+  INCLUDES = -I"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib"
+  OBJECT_DIR = CMakeFiles/nuage.dir
+  OBJECT_FILE_DIR = CMakeFiles/nuage.dir/common
 
 # =============================================================================
-# Link build statements for EXECUTABLE target tinyraytracer
+# Link build statements for EXECUTABLE target nuage
 
 
 #############################################
-# Link the executable tinyraytracer
+# Link the executable nuage
 
-build tinyraytracer: CXX_EXECUTABLE_LINKER__tinyraytracer CMakeFiles/tinyraytracer.dir/tinyraytracer.cpp.o
+build nuage: CXX_EXECUTABLE_LINKER__nuage CMakeFiles/nuage.dir/nuage.cpp.o CMakeFiles/nuage.dir/lib/fonctions.cpp.o CMakeFiles/nuage.dir/lib/mat3.cpp.o CMakeFiles/nuage.dir/lib/vec2.cpp.o CMakeFiles/nuage.dir/lib/vec3.cpp.o CMakeFiles/nuage.dir/lib/vec4.cpp.o CMakeFiles/nuage.dir/common/backtrace.cpp.o CMakeFiles/nuage.dir/common/exception_cpe.cpp.o CMakeFiles/nuage.dir/common/file_tools.cpp.o
   FLAGS = -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g
   LINK_FLAGS = -rdynamic
-  OBJECT_DIR = CMakeFiles/tinyraytracer.dir
+  OBJECT_DIR = CMakeFiles/nuage.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = tinyraytracer
-  TARGET_PDB = tinyraytracer.dbg
+  TARGET_FILE = nuage
+  TARGET_PDB = nuage.dbg
 
 #############################################
 # Utility command for edit_cache
@@ -96,7 +145,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 #############################################
 # The main all target.
 
-build all: phony tinyraytracer
+build all: phony nuage
 
 #############################################
 # Make the all target the default.
