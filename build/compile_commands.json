@@ -1,55 +1,47 @@
 [
 {
-  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I\"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib\"   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/nuage.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/nuage.cpp\"",
-  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/nuage.cpp"
+  "directory": "/home/bregs/projects/Projet-Nuage/build",
+  "command": "/bin/c++   -I/home/bregs/projects/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/nuage.cpp.o -c /home/bregs/projects/Projet-Nuage/projet/nuage.cpp",
+  "file": "/home/bregs/projects/Projet-Nuage/projet/nuage.cpp"
 },
-
 {
-  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I\"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib\"   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/fonctions.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib/fonctions.cpp\"",
-  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib/fonctions.cpp"
+  "directory": "/home/bregs/projects/Projet-Nuage/build",
+  "command": "/bin/c++   -I/home/bregs/projects/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/fonctions.cpp.o -c /home/bregs/projects/Projet-Nuage/projet/lib/fonctions.cpp",
+  "file": "/home/bregs/projects/Projet-Nuage/projet/lib/fonctions.cpp"
 },
-
 {
-  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I\"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib\"   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/mat3.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib/mat3.cpp\"",
-  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib/mat3.cpp"
+  "directory": "/home/bregs/projects/Projet-Nuage/build",
+  "command": "/bin/c++   -I/home/bregs/projects/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/mat3.cpp.o -c /home/bregs/projects/Projet-Nuage/projet/lib/mat3.cpp",
+  "file": "/home/bregs/projects/Projet-Nuage/projet/lib/mat3.cpp"
 },
-
 {
-  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I\"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib\"   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec2.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib/vec2.cpp\"",
-  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib/vec2.cpp"
+  "directory": "/home/bregs/projects/Projet-Nuage/build",
+  "command": "/bin/c++   -I/home/bregs/projects/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec2.cpp.o -c /home/bregs/projects/Projet-Nuage/projet/lib/vec2.cpp",
+  "file": "/home/bregs/projects/Projet-Nuage/projet/lib/vec2.cpp"
 },
-
 {
-  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I\"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib\"   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec3.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib/vec3.cpp\"",
-  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib/vec3.cpp"
+  "directory": "/home/bregs/projects/Projet-Nuage/build",
+  "command": "/bin/c++   -I/home/bregs/projects/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec3.cpp.o -c /home/bregs/projects/Projet-Nuage/projet/lib/vec3.cpp",
+  "file": "/home/bregs/projects/Projet-Nuage/projet/lib/vec3.cpp"
 },
-
 {
-  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I\"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib\"   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec4.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib/vec4.cpp\"",
-  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib/vec4.cpp"
+  "directory": "/home/bregs/projects/Projet-Nuage/build",
+  "command": "/bin/c++   -I/home/bregs/projects/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec4.cpp.o -c /home/bregs/projects/Projet-Nuage/projet/lib/vec4.cpp",
+  "file": "/home/bregs/projects/Projet-Nuage/projet/lib/vec4.cpp"
 },
-
 {
-  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I\"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib\"   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/backtrace.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/common/backtrace.cpp\"",
-  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/common/backtrace.cpp"
+  "directory": "/home/bregs/projects/Projet-Nuage/build",
+  "command": "/bin/c++   -I/home/bregs/projects/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/backtrace.cpp.o -c /home/bregs/projects/Projet-Nuage/projet/common/backtrace.cpp",
+  "file": "/home/bregs/projects/Projet-Nuage/projet/common/backtrace.cpp"
 },
-
 {
-  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I\"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib\"   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/exception_cpe.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/common/exception_cpe.cpp\"",
-  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/common/exception_cpe.cpp"
+  "directory": "/home/bregs/projects/Projet-Nuage/build",
+  "command": "/bin/c++   -I/home/bregs/projects/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/exception_cpe.cpp.o -c /home/bregs/projects/Projet-Nuage/projet/common/exception_cpe.cpp",
+  "file": "/home/bregs/projects/Projet-Nuage/projet/common/exception_cpe.cpp"
 },
-
 {
-  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I\"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/lib\"   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/file_tools.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/common/file_tools.cpp\"",
-  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/common/file_tools.cpp"
+  "directory": "/home/bregs/projects/Projet-Nuage/build",
+  "command": "/bin/c++   -I/home/bregs/projects/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/file_tools.cpp.o -c /home/bregs/projects/Projet-Nuage/projet/common/file_tools.cpp",
+  "file": "/home/bregs/projects/Projet-Nuage/projet/common/file_tools.cpp"
 }
 ]

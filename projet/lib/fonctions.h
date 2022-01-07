@@ -1,6 +1,7 @@
 #include <iostream>
 #include "mat3.hpp"
 #include "vec3.hpp"
+#include "vec4.hpp"
 
 float linterp(float a, float b, float t);
 

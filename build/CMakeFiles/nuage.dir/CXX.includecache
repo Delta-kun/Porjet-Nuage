@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bregs/projects/Projet-Nuage/projet/lib/fonctions.cpp
+iostream
+-
+math.h
+-
+cmath
+-
+fonctions.h
+/home/bregs/projects/Projet-Nuage/projet/lib/fonctions.h
+
+/home/bregs/projects/Projet-Nuage/projet/lib/fonctions.h
+iostream
+-
+mat3.hpp
+/home/bregs/projects/Projet-Nuage/projet/lib/mat3.hpp
+vec3.hpp
+/home/bregs/projects/Projet-Nuage/projet/lib/vec3.hpp
+vec4.hpp
+/home/bregs/projects/Projet-Nuage/projet/lib/vec4.hpp
+
+/home/bregs/projects/Projet-Nuage/projet/lib/mat3.hpp
+ostream
+-
+array
+-
+
+/home/bregs/projects/Projet-Nuage/projet/lib/vec3.hpp
+ostream
+-
+
+/home/bregs/projects/Projet-Nuage/projet/lib/vec4.hpp
+ostream
+-
+

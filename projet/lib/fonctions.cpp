@@ -5,9 +5,9 @@
 
 using namespace cpe;
 
-mat3 m = mat3(0.0f, 0.8f, 0.6f,
-        -0.8f, 0.36f, -0.48f,
-        -0.6f, -0.48f, 0.64f);
+mat3 m = mat3(0.0f,  0.8f,   0.6f,
+             -0.8f,  0.36f, -0.48f,
+             -0.6f, -0.48f,  0.64f);
 
 float linterp(float a, float b, float t)
 {
@@ -29,7 +29,7 @@ float noise (vec3 x)
     f_tmp = 3.0f-f_tmp;
     f = f*f*f_tmp;
 
-    float n = p.x()+p.y()*57.0f+113.0f*p.z();
+    float n = p.x() + p.y() * 57.0f + 113.0f * p.z();
 
     float res = linterp(
         linterp(
@@ -59,3 +59,4 @@ float scene(vec3 p)
     float length = sqrt(pow(p.x(),2)+pow(p.y(),2)+pow(p.z(),2));
     return 0.1f-length*0.5f+fbm(p*0.3);
 }
+
