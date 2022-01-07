@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7     -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/tinyraytracer.dir/tinyraytracer.cpp.o -c \"/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/tinyraytracer.cpp\"",
+  "file": "/fs03/share/users/ronan.adam/home/Documents/Annee5/Projet Nuage/projet/tinyraytracer.cpp"
+}
+]

@@ -25,3 +25,5 @@ file(GLOB SOURCES *.h *.cpp)
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
+#add_subdirectory(${CMAKE_SOURCE_DIR}/lib)
+#include_directories(${CMAKE_SOURCE_DIR}/lib)

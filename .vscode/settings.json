@@ -1,0 +1,7 @@
+{
+    "cmake.sourceDirectory": "${workspaceFolder}/projet",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "cmath": "cpp"
+    }
+}
