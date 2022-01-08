@@ -57,6 +57,8 @@ float fbm(vec3 p)
 float scene(vec3 p)
 {
     float length = sqrt(pow(p.x(),2)+pow(p.y(),2)+pow(p.z(),2));
-    return 0.1f-length*0.5f+fbm(p*0.3);
+    float cloudWidth = 2.0f; //zoom sur le nuage
+    float noiseFreq = 30.f; //facteur de fréquance sur le bruit perlin
+    return 0.1f - length*cloudWidth + fbm(p*noiseFreq);
 }
 

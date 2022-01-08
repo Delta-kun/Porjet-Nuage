@@ -18,9 +18,10 @@ vec4 raymarching(float jh, float iw, vec3 dir) {
     float step = zMax/nbSample;
     vec3 p = vec3(jh, iw, 0.0f);
     float T = 2.0f;
-    float absorption = 100.0f;
+    float absorption = 60.0f;
     //vec3 color = vec3(0.0f,0.0f,0.0f);
-    vec4 color = vec4(0.0f,0.0f,0.0f,0.0f);
+    //vec4 color = vec4(0.0f,0.0f,0.0f,0.0f);
+    vec4 color = vec4(135.0f,206.0f,235.0f,1.0f)/255; //bleu ciel
 
     for(int k = 0; k<nbSample; k++)
     {
@@ -40,8 +41,8 @@ vec4 raymarching(float jh, float iw, vec3 dir) {
 }
 
 void render() {
-    const int   width    = 1024;
-    const int   height   = 768;
+    const int   width    = 512;
+    const int   height   = 384;
     const float fov      = M_PI/3.;
     std::vector<vec4> framebuffer(width*height);
 
