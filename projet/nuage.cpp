@@ -14,14 +14,19 @@ using namespace cpe;
 vec4 raymarching(float jh, float iw, vec3 dir) {
     
     int nbSample = 64;
-    int zMax = 40.0;
+    int zMax = 40.0f;
     float step = zMax/nbSample;
     vec3 p = vec3(jh, iw, 0.0f);
     float T = 2.0f;
-    float absorption = 60.0f;
+    float absorption = 110.0f;
     //vec3 color = vec3(0.0f,0.0f,0.0f);
     //vec4 color = vec4(0.0f,0.0f,0.0f,0.0f);
     vec4 color = vec4(135.0f,206.0f,235.0f,1.0f)/255; //bleu ciel
+
+    int nbSampleLight = 6;
+    float zMaxLight = 20.0f;
+    float stepLight = zMaxLight/float(nbSampleLight);
+    vec3 sun_direction = normalized(vec3(0.0f,1.0f,0.0f));
 
     for(int k = 0; k<nbSample; k++)
     {
@@ -32,7 +37,20 @@ vec4 raymarching(float jh, float iw, vec3 dir) {
             if(T<=0.01){
                 break;
             }
-            color += vec4(1.0f,1.0f,1.0f,1.0f)*50.0f*tmp*T;
+
+            // Light
+            float Tl = 1.0f;
+            for(int l = 0; l<nbSampleLight; l++)
+            {
+                float densityLight = scene(p+sun_direction*float(l)*stepLight);
+                if(densityLight>0.)
+                	Tl *= 1. - densityLight * absorption/float(nbSample);
+                if (Tl <= 0.01)
+                    break;
+            }
+
+            // Color ambiant & light
+            color += vec4(1.0f,1.0f,1.0f,1.0f)*50.0f*tmp*T + vec4(1.0f,0.7f,0.4f,1.0f)*80.*tmp*T*Tl;
         }
         p += dir*step;
     }

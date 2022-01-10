@@ -55,7 +55,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/bregs/projects/Projet-Nuage/build"
+			"value" : "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -155,11 +155,11 @@
 				},
 				{
 					"name" : "HELPSTRING",
-					"value" : "CXX compiler"
+					"value" : "No help, variable specified on the command line."
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/bin/c++"
+			"value" : "/bin/x86_64-linux-gnu-g++-9"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -595,7 +595,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/bregs/projects/Projet-Nuage/projet"
+			"value" : "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1131,7 +1131,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/bregs/projects/Projet-Nuage/build"
+			"value" : "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build"
 		},
 		{
 			"name" : "nuage_SOURCE_DIR",
@@ -1143,7 +1143,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/bregs/projects/Projet-Nuage/projet"
+			"value" : "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet"
 		}
 	],
 	"kind" : "cache",

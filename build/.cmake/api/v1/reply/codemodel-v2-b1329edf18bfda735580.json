@@ -38,7 +38,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "nuage::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-nuage-Debug-e3891a9804e7e4612b3d.json",
+					"jsonFile" : "target-nuage-Debug-1a99a01018dc2906f74a.json",
 					"name" : "nuage",
 					"projectIndex" : 0
 				}
@@ -48,8 +48,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/bregs/projects/Projet-Nuage/build",
-		"source" : "/home/bregs/projects/Projet-Nuage/projet"
+		"build" : "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
+		"source" : "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet"
 	},
 	"version" : 
 	{
