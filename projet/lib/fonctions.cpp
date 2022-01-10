@@ -17,7 +17,7 @@ float linterp(float a, float b, float t)
 float hash(float n)
 {
     float x = sin(n)*43758.5453;
-    return x-floor(x);
+    return 0.8*(x-floor(x))+0.2;
 }
 
 float noise (vec3 x)
@@ -48,17 +48,21 @@ float noise (vec3 x)
 float fbm(vec3 p)
 {
     float f;
-    f  = 0.5000*noise( p ); p = m*p*2.02;
-    f += 0.2500*noise( p ); p = m*p*2.03;
-    f += 0.1250*noise( p );
+    f  = 0.4000*noise( p ); p = m*p*2.02;
+    f += 0.2000*noise( p ); p = m*p*2.03;
+    f += 0.1500*noise( p );
     return f;
 }
 
 float scene(vec3 p)
 {
     float length = sqrt(pow(p.x(),2)+pow(p.y(),2)+pow(p.z(),2));
-    float cloudWidth = 2.0f; //zoom sur le nuage
-    float noiseFreq = 30.f; //facteur de fréquence sur le bruit perlin
-    return 0.1f - length*cloudWidth + fbm(p*noiseFreq);
+    float maxLength = sqrt(3.0f);
+
+    float filtre = 1.0f - std::fabs(length/maxLength);
+
+    float cloudWidth = 1.5f; //dézoom sur le nuage
+    float noiseFreq = 25.f; //facteur de fréquence sur le bruit perlin
+    return filtre*(-0.1f- length*cloudWidth + fbm(p*noiseFreq));
 }
 

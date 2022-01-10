@@ -11,22 +11,22 @@
 
 using namespace cpe;
 
-vec4 raymarching(float jh, float iw, vec3 dir) {
+vec3 raymarching(float jh, float iw, vec3 dir) {
     
     int nbSample = 64;
     int zMax = 40.0f;
     float step = zMax/nbSample;
     vec3 p = vec3(jh, iw, 0.0f);
     float T = 2.0f;
-    float absorption = 110.0f;
-    //vec3 color = vec3(0.0f,0.0f,0.0f);
+    float absorption = 90.0f;
+    vec3 color = vec3(0.0f,0.0f,0.0f);
     //vec4 color = vec4(0.0f,0.0f,0.0f,0.0f);
-    vec4 color = vec4(135.0f,206.0f,235.0f,1.0f)/255; //bleu ciel
+    //vec4 color = vec4(135.0f,206.0f,235.0f,1.0f)/255; //bleu ciel
 
     int nbSampleLight = 6;
     float zMaxLight = 20.0f;
     float stepLight = zMaxLight/float(nbSampleLight);
-    vec3 sun_direction = normalized(vec3(0.0f,1.0f,0.0f));
+    vec3 sun_direction = normalized(vec3(2.0f,1.0f,1.0f));
 
     for(int k = 0; k<nbSample; k++)
     {
@@ -50,7 +50,7 @@ vec4 raymarching(float jh, float iw, vec3 dir) {
             }
 
             // Color ambiant & light
-            color += vec4(1.0f,1.0f,1.0f,1.0f)*50.0f*tmp*T + vec4(1.0f,0.7f,0.4f,1.0f)*80.*tmp*T*Tl;
+            color += vec3(1.0f,1.0f,1.0f)*70.0f*tmp*T + vec3(0.9f,0.9f,0.85f)*8.0*tmp*T*Tl;
         }
         p += dir*step;
     }
@@ -62,7 +62,7 @@ void render() {
     const int   width    = 512;
     const int   height   = 384;
     const float fov      = M_PI/3.;
-    std::vector<vec4> framebuffer(width*height);
+    std::vector<vec3> framebuffer(width*height);
 
     #pragma omp parallel for
     for (int j = 0; j<height; j++) { // actual rendering loop
@@ -79,9 +79,9 @@ void render() {
     std::ofstream ofs; // save the framebuffer to file
     ofs.open("./out.ppm", std::ios::binary);
     ofs << "P6\n" << width << " " << height << "\n255\n";
-    for (vec4 &c : framebuffer) {
+    for (vec3 &c : framebuffer) {
         float max = std::max(c[0], std::max(c[1], c[2]));
-        if (max>1) c = c*(1./max);
+        if (max>1) c = c/max;
         ofs << (char)(255 * c[0]) << (char)(255 * c[1]) << (char)(255 * c[2]);
     }
     ofs.close();
