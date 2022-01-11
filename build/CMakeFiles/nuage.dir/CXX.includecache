@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/fonctions.cpp
-iostream
--
-math.h
--
-cmath
--
-fonctions.h
-/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/fonctions.h
-
 /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/fonctions.h
 iostream
 -
@@ -38,5 +28,25 @@ ostream
 
 /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/vec4.hpp
 ostream
+-
+
+/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/nuage.cpp
+vec3.hpp
+/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/vec3.hpp
+mat3.hpp
+/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/mat3.hpp
+vec4.hpp
+/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/vec4.hpp
+fonctions.h
+/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/fonctions.h
+limits
+-
+fstream
+-
+vector
+-
+algorithm
+-
+math.h
 -
 

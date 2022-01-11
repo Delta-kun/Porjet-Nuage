@@ -28,9 +28,14 @@ vec3 raymarching(float jh, float iw, vec3 dir) {
     float stepLight = zMaxLight/float(nbSampleLight);
     vec3 sun_direction = normalized(vec3(2.0f,1.0f,1.0f));
 
+    float maxLength = norm(vec3(0.5f,0.5f,0.0f)+nbSample*dir);
+
     for(int k = 0; k<nbSample; k++)
     {
-        float density = scene(p);
+        float length = norm(p);
+        float density = scene(p, length);
+        // density *= filtre_abs(length, maxLength, false); // Application d'un filtre absolu
+        density *= filtre_gauss(length, maxLength, false); // Application d'un filtre gaussien
         if (density>0.0f){
             float tmp = density/float(nbSample);
             T *= 1.0f-tmp*absorption;
@@ -40,9 +45,13 @@ vec3 raymarching(float jh, float iw, vec3 dir) {
 
             // Light
             float Tl = 1.0f;
+            float maxLengthLight = norm(p+sun_direction*nbSampleLight);
             for(int l = 0; l<nbSampleLight; l++)
             {
-                float densityLight = scene(p+sun_direction*float(l)*stepLight);
+                float lengthLight = norm(p+sun_direction*float(l)*stepLight);
+                float densityLight = scene(p+sun_direction*float(l)*stepLight, lengthLight);
+                // density *= filtre_abs(length, maxLengthLight, true); // Filtre absolu
+                density *= filtre_gauss(length, maxLengthLight, true); // Filtre gaussien
                 if(densityLight>0.)
                 	Tl *= 1. - densityLight * absorption/float(nbSample);
                 if (Tl <= 0.01)
@@ -72,7 +81,7 @@ void render() {
             float dir_z = -height/(2.*tan(fov/2.));
 
             vec3 dir = vec3(dir_x,dir_y,dir_z);
-            framebuffer[i+j*width] = raymarching(float(j)/float(height)-0.5,float(i)/float(width)-0.5,dir);
+            framebuffer[i+j*width] = raymarching(float(j)/float(height)-0.5,float(i)/float(width)-0.5,normalized(dir));
         }
     }
 
@@ -81,7 +90,7 @@ void render() {
     ofs << "P6\n" << width << " " << height << "\n255\n";
     for (vec3 &c : framebuffer) {
         float max = std::max(c[0], std::max(c[1], c[2]));
-        if (max>1) c = c/max;
+        if (max>1) c = vec3(1.0f,0.0f,0.0f);
         ofs << (char)(255 * c[0]) << (char)(255 * c[1]) << (char)(255 * c[2]);
     }
     ofs.close();

@@ -54,15 +54,28 @@ float fbm(vec3 p)
     return f;
 }
 
-float scene(vec3 p)
+float filtre_abs(float length, float maxL, bool light)
 {
-    float length = sqrt(pow(p.x(),2)+pow(p.y(),2)+pow(p.z(),2));
-    float maxLength = sqrt(3.0f);
+    if(light){
+        return 0.2f*(1.0f-std::fabs(length/maxL));
+    } else {
+        return 0.2f*(std::fabs(length/maxL)+0.1f);
+    }
+}
 
-    float filtre = 1.0f - std::fabs(length/maxLength);
+float filtre_gauss(float length, float maxL, bool light)
+{
+    if(light){
+        return 0.02f*(1.0f-std::exp(-std::fabs(length/maxL)));
+    } else {
+        return 0.02f*std::exp(-std::fabs(length/maxL));
+    }
+}
 
+float scene(vec3 p, float length)
+{
     float cloudWidth = 1.5f; //dézoom sur le nuage
     float noiseFreq = 25.f; //facteur de fréquence sur le bruit perlin
-    return filtre*(-0.1f- length*cloudWidth + fbm(p*noiseFreq));
+    return -0.1f- length*cloudWidth + fbm(p*noiseFreq);
 }
 
