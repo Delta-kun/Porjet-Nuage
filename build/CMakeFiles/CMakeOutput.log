@@ -609,3 +609,57 @@ Run Build Command:"/usr/bin/ninja" "cmTC_093be"
 
 Source file was:
 int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported succeeded with the following output:
+Change Dir: /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_84aa3"
+[1/2] Building CXX object CMakeFiles/cmTC_84aa3.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_84aa3
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported succeeded with the following output:
+Change Dir: /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_4f77c"
+[1/2] Building CXX object CMakeFiles/cmTC_4f77c.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_4f77c
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported succeeded with the following output:
+Change Dir: /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_7dea5"
+[1/2] Building CXX object CMakeFiles/cmTC_7dea5.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_7dea5
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported succeeded with the following output:
+Change Dir: /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_c0671"
+[1/2] Building CXX object CMakeFiles/cmTC_c0671.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_c0671
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported succeeded with the following output:
+Change Dir: /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_134ca"
+[1/2] Building CXX object CMakeFiles/cmTC_134ca.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_134ca
+
+Source file was:
+int main() { return 0; }
+Performing C++ SOURCE FILE Test flag_supported succeeded with the following output:
+Change Dir: /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/ninja" "cmTC_c35e9"
+[1/2] Building CXX object CMakeFiles/cmTC_c35e9.dir/src.cxx.o
+[2/2] Linking CXX executable cmTC_c35e9
+
+Source file was:
+int main() { return 0; }

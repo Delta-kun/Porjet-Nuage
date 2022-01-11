@@ -93,7 +93,7 @@ void render() {
     ofs << "P6\n" << width << " " << height << "\n255\n";
     for (vec3 &c : framebuffer) {
         float max = std::max(c[0], std::max(c[1], c[2]));
-        if (max>1) c = vec3(1.0f,0.0f,0.0f);
+        if (max>1) c = c/max;
         ofs << (char)(255 * c[0]) << (char)(255 * c[1]) << (char)(255 * c[2]);
     }
     ofs.close();

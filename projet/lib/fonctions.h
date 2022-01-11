@@ -2,6 +2,8 @@
 #include "mat3.hpp"
 #include "vec3.hpp"
 #include "vec4.hpp"
+#include "cloud.hpp"
+#include <vector>
 
 float linterp(float a, float b, float t);
 

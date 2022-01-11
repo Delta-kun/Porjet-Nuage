@@ -74,35 +74,39 @@ float filtre_gauss(float length, float maxL, bool light)
 
 float scene(vec3 p)
 {
-    int modele = 2;
-    float cloudWidth;
-    float noiseFreq;
-    switch(modele)
-    {
-        case 1 :
-        {
-            vec3 c0(0.5f,0.5f,0.0f);
-            float l = norm(p-c0);
-            cloudWidth = 1.5f; //dézoom sur le nuage
-            noiseFreq = 25.f; //facteur de fréquence sur le bruit perlin
-            return -0.1f - l*cloudWidth + fbm(p*noiseFreq);
-            break;
-        }
+    //Creation Clouds
+    std::vector<cloud> Clouds;
 
-        case 2 : 
-        {
-            vec3 c1(0.5f,0.35f,-0.0f);
-            vec3 c2(0.5f,0.65f,-0.0f);
-            float l1 = norm(p-c1);
-            float l2 = norm(p-c2);
-            cloudWidth = 1.8f; //dézoom sur le nuage
-            noiseFreq = 25.f; //facteur de fréquence sur le bruit perlin
-            return  - std::min(l1,l2)*cloudWidth + fbm(p*noiseFreq);
-            break;
-        }
-            
+    vec3 c(0.5f,0.25f,0.0f);
+    float w = 1.0f;
+    float f = 25.0f;
+    cloud nuage1(c,w,f);
+
+    Clouds.push_back(nuage1);
+
+    vec3 c2(0.5f,0.75f,0.0f);
+    float w2 = 1.0f;
+    float f2 = 2.0f;
+    cloud nuage2(c2,w2,f2);
+
+    Clouds.push_back(nuage2);
+
+    float l;
+    // float l_min = 100.0f; //Utile pour distance min
+    float somme = 0.0f;
+
+    std::vector<cloud>::iterator it;
+    std::vector<cloud>::iterator it_min;
+
+    it = Clouds.begin();
+
+    while(it != Clouds.end())
+    {
+        l = norm(p - it->center());
+        somme = somme -l * it->cloudWidth() + fbm(p * it->noiseFreq());
+        it++;
     }
-        
-    
+
+    return  somme; 
 }
 
