@@ -48,9 +48,9 @@ float noise (vec3 x)
 float fbm(vec3 p)
 {
     float f;
-    f  = 0.4000*noise( p ); p = m*p*2.02;
-    f += 0.2000*noise( p ); p = m*p*2.03;
-    f += 0.1500*noise( p );
+    f  = 0.4500*noise( p ); p = m*p*2.5;
+    f += 0.2000*noise( p ); p = m*p*2.0;
+    f += 0.0500*noise( p );
     return f;
 }
 
@@ -72,10 +72,37 @@ float filtre_gauss(float length, float maxL, bool light)
     }
 }
 
-float scene(vec3 p, float length)
+float scene(vec3 p)
 {
-    float cloudWidth = 1.5f; //dézoom sur le nuage
-    float noiseFreq = 25.f; //facteur de fréquence sur le bruit perlin
-    return -0.1f- length*cloudWidth + fbm(p*noiseFreq);
+    int modele = 2;
+    float cloudWidth;
+    float noiseFreq;
+    switch(modele)
+    {
+        case 1 :
+        {
+            vec3 c0(0.5f,0.5f,0.0f);
+            float l = norm(p-c0);
+            cloudWidth = 1.5f; //dézoom sur le nuage
+            noiseFreq = 25.f; //facteur de fréquence sur le bruit perlin
+            return -0.1f - l*cloudWidth + fbm(p*noiseFreq);
+            break;
+        }
+
+        case 2 : 
+        {
+            vec3 c1(0.5f,0.35f,-0.0f);
+            vec3 c2(0.5f,0.65f,-0.0f);
+            float l1 = norm(p-c1);
+            float l2 = norm(p-c2);
+            cloudWidth = 1.8f; //dézoom sur le nuage
+            noiseFreq = 25.f; //facteur de fréquence sur le bruit perlin
+            return  - std::min(l1,l2)*cloudWidth + fbm(p*noiseFreq);
+            break;
+        }
+            
+    }
+        
+    
 }
 

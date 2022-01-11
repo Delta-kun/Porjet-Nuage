@@ -1,3 +1,4 @@
+#include "vec2.hpp"
 #include "vec3.hpp"
 #include "mat3.hpp"
 #include "vec4.hpp"
@@ -33,7 +34,7 @@ vec3 raymarching(float jh, float iw, vec3 dir) {
     for(int k = 0; k<nbSample; k++)
     {
         float length = norm(p);
-        float density = scene(p, length);
+        float density = scene(p);
         // density *= filtre_abs(length, maxLength, false); // Application d'un filtre absolu
         density *= filtre_gauss(length, maxLength, false); // Application d'un filtre gaussien
         if (density>0.0f){
@@ -49,9 +50,9 @@ vec3 raymarching(float jh, float iw, vec3 dir) {
             for(int l = 0; l<nbSampleLight; l++)
             {
                 float lengthLight = norm(p+sun_direction*float(l)*stepLight);
-                float densityLight = scene(p+sun_direction*float(l)*stepLight, lengthLight);
-                // density *= filtre_abs(length, maxLengthLight, true); // Filtre absolu
-                density *= filtre_gauss(length, maxLengthLight, true); // Filtre gaussien
+                float densityLight = scene(p+sun_direction*float(l)*stepLight);
+                // density *= filtre_abs(lengthLight, maxLengthLight, true); // Filtre absolu
+                density *= filtre_gauss(lengthLight, maxLengthLight, true); // Filtre gaussien
                 if(densityLight>0.)
                 	Tl *= 1. - densityLight * absorption/float(nbSample);
                 if (Tl <= 0.01)
@@ -73,6 +74,8 @@ void render() {
     const float fov      = M_PI/3.;
     std::vector<vec3> framebuffer(width*height);
 
+    const vec2 offSet(-0.0f,-0.0f);
+
     #pragma omp parallel for
     for (int j = 0; j<height; j++) { // actual rendering loop
         for (int i = 0; i<width; i++) {
@@ -81,7 +84,7 @@ void render() {
             float dir_z = -height/(2.*tan(fov/2.));
 
             vec3 dir = vec3(dir_x,dir_y,dir_z);
-            framebuffer[i+j*width] = raymarching(float(j)/float(height)-0.5,float(i)/float(width)-0.5,normalized(dir));
+            framebuffer[i+j*width] = raymarching(float(j)/float(height)+offSet.x(), float(i)/float(width)+offSet.y(), normalized(dir));
         }
     }
 
