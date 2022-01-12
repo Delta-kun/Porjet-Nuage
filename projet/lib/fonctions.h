@@ -14,6 +14,6 @@ float fbm(cpe::vec3 p);
 float filtre_abs(float length, float maxL, bool light);
 float filtre_gauss(float length, float maxL, bool light);
 
-float scene(cpe::vec3 p);
+float scene(cpe::vec3 p, float b);
 
 
