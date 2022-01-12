@@ -52,7 +52,7 @@ vec3 raymarching(float jh, float iw, vec3 dir) {
                 float lengthLight = norm(p+sun_direction*float(l)*stepLight);
                 float densityLight = scene(p+sun_direction*float(l)*stepLight);
                 // density *= filtre_abs(lengthLight, maxLengthLight, true); // Filtre absolu
-                density *= filtre_gauss(lengthLight, maxLengthLight, true); // Filtre gaussien
+                densityLight *= filtre_gauss(lengthLight, maxLengthLight, true); // Filtre gaussien
                 if(densityLight>0.)
                 	Tl *= 1. - densityLight * absorption/float(nbSample);
                 if (Tl <= 0.01)
