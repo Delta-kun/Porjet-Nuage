@@ -84,7 +84,7 @@ void render() {
             float dir_z = -height/(2.*tan(fov/2.));
 
             vec3 dir = vec3(dir_x,dir_y,dir_z);
-            framebuffer[i+j*width] = raymarching(float(j)/float(height)+offSet.x(), float(i)/float(width)+offSet.y(), normalized(dir));
+            framebuffer[i+j*width] = raymarching(float(j)/float(height) + offSet.x(), float(i)/float(width) + offSet.y(), normalized(dir));
         }
     }
 
@@ -93,7 +93,11 @@ void render() {
     ofs << "P6\n" << width << " " << height << "\n255\n";
     for (vec3 &c : framebuffer) {
         float max = std::max(c[0], std::max(c[1], c[2]));
-        if (max>1) c = c/max;
+        if (max>1){
+            c = c/max;
+            max = 1;
+        }
+        c = max * vec3(1.0f,1.0f,1.0f) + (1-max) * vec3(135.0f,206.0f,235.0f) / 255;
         ofs << (char)(255 * c[0]) << (char)(255 * c[1]) << (char)(255 * c[2]);
     }
     ofs.close();

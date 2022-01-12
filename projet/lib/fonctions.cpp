@@ -77,14 +77,14 @@ float scene(vec3 p)
     //Creation Clouds
     std::vector<cloud> Clouds;
 
-    vec3 c(0.5f,0.25f,0.0f);
+    vec3 c(0.5f,0.30f,0.0f);
     float w = 1.0f;
     float f = 25.0f;
     cloud nuage1(c,w,f);
 
     Clouds.push_back(nuage1);
 
-    vec3 c2(0.5f,0.75f,0.0f);
+    vec3 c2(0.5f,0.70f,0.0f);
     float w2 = 1.0f;
     float f2 = 2.0f;
     cloud nuage2(c2,w2,f2);
