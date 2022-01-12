@@ -20,7 +20,6 @@ vec3 raymarching(float jh, float iw, vec3 dir) {
     vec3 p = vec3(jh, iw, 0.0f);
     float T = 2.0f;
     float absorption = 90.0f;
-    float b = 2.0f;
     vec3 color = vec3(0.0f,0.0f,0.0f);
     //vec4 color = vec4(0.0f,0.0f,0.0f,0.0f);
     //vec4 color = vec4(135.0f,206.0f,235.0f,1.0f)/255; //bleu ciel
@@ -29,14 +28,13 @@ vec3 raymarching(float jh, float iw, vec3 dir) {
     float zMaxLight = 20.0f;
     float stepLight = zMaxLight/float(nbSampleLight);
     vec3 sun_direction = normalized(vec3(2.0f,1.0f,1.0f));
-    float bLight = 0.0f;
 
     float maxLength = norm(vec3(0.5f,0.5f,0.0f)+nbSample*dir);
 
     for(int k = 0; k<nbSample; k++)
     {
         float length = norm(p);
-        float density = scene(p,b);
+        float density = scene(p);
         // density *= filtre_abs(length, maxLength, false); // Application d'un filtre absolu
         density *= filtre_gauss(length, maxLength, false); // Application d'un filtre gaussien
         if (density>0.0f){
@@ -52,8 +50,8 @@ vec3 raymarching(float jh, float iw, vec3 dir) {
             for(int l = 0; l<nbSampleLight; l++)
             {
                 float lengthLight = norm(p+sun_direction*float(l)*stepLight);
-                float densityLight = scene(p+sun_direction*float(l)*stepLight,bLight);
-                // densityLight *= filtre_abs(lengthLight, maxLengthLight, true); // Filtre absolu
+                float densityLight = scene(p+sun_direction*float(l)*stepLight);
+                // density *= filtre_abs(lengthLight, maxLengthLight, true); // Filtre absolu
                 densityLight *= filtre_gauss(lengthLight, maxLengthLight, true); // Filtre gaussien
                 if(densityLight>0.)
                 	Tl *= 1. - densityLight * absorption/float(nbSample);

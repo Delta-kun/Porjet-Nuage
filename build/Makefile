@@ -204,33 +204,6 @@ common/file_tools.cpp.s:
 	$(MAKE) -f CMakeFiles/nuage.dir/build.make CMakeFiles/nuage.dir/common/file_tools.cpp.s
 .PHONY : common/file_tools.cpp.s
 
-lib/cloud.o: lib/cloud.cpp.o
-
-.PHONY : lib/cloud.o
-
-# target to build an object file
-lib/cloud.cpp.o:
-	$(MAKE) -f CMakeFiles/nuage.dir/build.make CMakeFiles/nuage.dir/lib/cloud.cpp.o
-.PHONY : lib/cloud.cpp.o
-
-lib/cloud.i: lib/cloud.cpp.i
-
-.PHONY : lib/cloud.i
-
-# target to preprocess a source file
-lib/cloud.cpp.i:
-	$(MAKE) -f CMakeFiles/nuage.dir/build.make CMakeFiles/nuage.dir/lib/cloud.cpp.i
-.PHONY : lib/cloud.cpp.i
-
-lib/cloud.s: lib/cloud.cpp.s
-
-.PHONY : lib/cloud.s
-
-# target to generate assembly for a file
-lib/cloud.cpp.s:
-	$(MAKE) -f CMakeFiles/nuage.dir/build.make CMakeFiles/nuage.dir/lib/cloud.cpp.s
-.PHONY : lib/cloud.cpp.s
-
 lib/fonctions.o: lib/fonctions.cpp.o
 
 .PHONY : lib/fonctions.o
@@ -411,9 +384,6 @@ help:
 	@echo "... common/file_tools.o"
 	@echo "... common/file_tools.i"
 	@echo "... common/file_tools.s"
-	@echo "... lib/cloud.o"
-	@echo "... lib/cloud.i"
-	@echo "... lib/cloud.s"
 	@echo "... lib/fonctions.o"
 	@echo "... lib/fonctions.i"
 	@echo "... lib/fonctions.s"

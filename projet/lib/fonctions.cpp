@@ -72,27 +72,26 @@ float filtre_gauss(float length, float maxL, bool light)
     }
 }
 
-float scene(vec3 p, float b)
+float scene(vec3 p)
 {
     //Creation Clouds
     std::vector<cloud> Clouds;
 
-    vec3 c1(0.5f,0.25f,0.0f);
-    float w1 = 1.0f;
-    float f1 = 25.0f;
-    cloud nuage1(c1,w1,f1);
+    vec3 c(0.5f,0.25f,0.0f);
+    float w = 1.0f;
+    float f = 25.0f;
+    cloud nuage1(c,w,f);
 
     Clouds.push_back(nuage1);
 
     vec3 c2(0.5f,0.75f,0.0f);
     float w2 = 1.0f;
-    float f2 = 15.0f;
+    float f2 = 2.0f;
     cloud nuage2(c2,w2,f2);
 
     Clouds.push_back(nuage2);
 
     float l;
-    float blinn = 1.0f;
     // float l_min = 100.0f; //Utile pour distance min
     float somme = 0.0f;
 
@@ -104,8 +103,7 @@ float scene(vec3 p, float b)
     while(it != Clouds.end())
     {
         l = norm(p - it->center());
-        if(b != 0.0f) blinn = std::exp(-b*std::pow(l,2));
-        somme = somme + blinn*(-l * it->cloudWidth() + fbm(p * it->noiseFreq()));
+        somme = somme -l * it->cloudWidth() + fbm(p * it->noiseFreq());
         it++;
     }
 
