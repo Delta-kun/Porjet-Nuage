@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet
+# Install script for directory: /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

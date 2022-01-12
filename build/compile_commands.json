@@ -1,52 +1,61 @@
 [
 {
-  "directory": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/nuage.cpp.o -c /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/nuage.cpp",
-  "file": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/nuage.cpp"
+  "directory": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/nuage.cpp.o -c /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/nuage.cpp",
+  "file": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/nuage.cpp"
 },
+
 {
-  "directory": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/cloud.cpp.o -c /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/cloud.cpp",
-  "file": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/cloud.cpp"
+  "directory": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/cloud.cpp.o -c /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/cloud.cpp",
+  "file": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/cloud.cpp"
 },
+
 {
-  "directory": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/fonctions.cpp.o -c /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/fonctions.cpp",
-  "file": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/fonctions.cpp"
+  "directory": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/fonctions.cpp.o -c /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/fonctions.cpp",
+  "file": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/fonctions.cpp"
 },
+
 {
-  "directory": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/mat3.cpp.o -c /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/mat3.cpp",
-  "file": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/mat3.cpp"
+  "directory": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/mat3.cpp.o -c /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/mat3.cpp",
+  "file": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/mat3.cpp"
 },
+
 {
-  "directory": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec2.cpp.o -c /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/vec2.cpp",
-  "file": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/vec2.cpp"
+  "directory": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec2.cpp.o -c /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/vec2.cpp",
+  "file": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/vec2.cpp"
 },
+
 {
-  "directory": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec3.cpp.o -c /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/vec3.cpp",
-  "file": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/vec3.cpp"
+  "directory": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec3.cpp.o -c /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/vec3.cpp",
+  "file": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/vec3.cpp"
 },
+
 {
-  "directory": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec4.cpp.o -c /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/vec4.cpp",
-  "file": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib/vec4.cpp"
+  "directory": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/lib/vec4.cpp.o -c /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/vec4.cpp",
+  "file": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib/vec4.cpp"
 },
+
 {
-  "directory": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/backtrace.cpp.o -c /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/common/backtrace.cpp",
-  "file": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/common/backtrace.cpp"
+  "directory": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/backtrace.cpp.o -c /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/common/backtrace.cpp",
+  "file": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/common/backtrace.cpp"
 },
+
 {
-  "directory": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/exception_cpe.cpp.o -c /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/common/exception_cpe.cpp",
-  "file": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/common/exception_cpe.cpp"
+  "directory": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/exception_cpe.cpp.o -c /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/common/exception_cpe.cpp",
+  "file": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/common/exception_cpe.cpp"
 },
+
 {
-  "directory": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/build",
-  "command": "/bin/x86_64-linux-gnu-g++-9   -I/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/file_tools.cpp.o -c /mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/common/file_tools.cpp",
-  "file": "/mnt/c/Users/Utilisateur/Documents/Important/Cours/IngeLyon/Annee5/Projet/Projet-Nuage/projet/common/file_tools.cpp"
+  "directory": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7   -I/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/lib   -Wall -Wextra -pedantic -std=c++14 -O3 -fopenmp -g   -o CMakeFiles/nuage.dir/common/file_tools.cpp.o -c /fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/common/file_tools.cpp",
+  "file": "/fs03/share/users/dorian.fabregue/home/Bureau/5ETI/Projet-Nuage/projet/common/file_tools.cpp"
 }
 ]
