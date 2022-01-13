@@ -1,6 +1,8 @@
 #include <iostream>
 #include <math.h>
 #include <cmath>
+#include <vector>
+#include "cloud.hpp"
 #include "fonctions.h"
 
 using namespace cpe;
@@ -48,56 +50,60 @@ float noise (vec3 x)
 float fbm(vec3 p)
 {
     float f;
-    f  = 0.4500*noise( p ); p = m*p*2.5;
-    f += 0.2000*noise( p ); p = m*p*2.0;
-    f += 0.0500*noise( p );
+    f  = 0.5000*noise( p ); p = m*p*2.03;
+    f += 0.2500*noise( p ); p = m*p*2.04;
+    f += 0.1250*noise( p );
     return f;
 }
 
 float filtre_abs(float length, float maxL, bool light)
 {
     if(light){
-        return 0.2f*(1.0f-std::fabs(length/maxL));
+        return std::fabs(length/maxL);
     } else {
-        return 0.2f*(std::fabs(length/maxL)+0.1f);
+        return 0.6f*(1.0f-std::fabs(length/maxL));
     }
 }
 
 float filtre_gauss(float length, float maxL, bool light)
 {
     if(light){
-        return 0.02f*(1.0f-std::exp(-std::fabs(length/maxL)));
+        return 1.0f-std::exp(-std::fabs(length/maxL));
     } else {
-        return 0.02f*std::exp(-std::fabs(length/maxL));
+        return 0.6f*std::exp(-std::fabs(length/maxL));
     }
 }
 
-float scene(vec3 p, float b)
+std::vector<cloud> CloudsCreation()
 {
     //Creation Clouds
     std::vector<cloud> Clouds;
 
-    vec3 c1(0.5f,0.25f,0.0f);
-    float w1 = 1.0f;
-    float f1 = 25.0f;
+    vec3 c1(0.5f,0.5f,0.0f);
+    float w1 = 1.5f;
+    float f1 = 20.0f;
     cloud nuage1(c1,w1,f1);
 
     Clouds.push_back(nuage1);
 
-    vec3 c2(0.5f,0.75f,0.0f);
+    vec3 c2(0.5f,0.5f,0.2f);
     float w2 = 1.0f;
-    float f2 = 15.0f;
+    float f2 = 25.0f;
     cloud nuage2(c2,w2,f2);
 
     Clouds.push_back(nuage2);
 
+    return Clouds;
+}
+
+float scene(vec3 p, float b, std::vector<cloud> Clouds)
+{
     float l;
     float blinn = 1.0f;
     // float l_min = 100.0f; //Utile pour distance min
     float somme = 0.0f;
 
     std::vector<cloud>::iterator it;
-    std::vector<cloud>::iterator it_min;
 
     it = Clouds.begin();
 
