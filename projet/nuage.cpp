@@ -4,6 +4,7 @@
 #include "vec4.hpp"
 #include "fonctions.h"
 
+#include <chrono>
 #include <limits>
 #include <fstream>
 #include <vector>
@@ -12,18 +13,31 @@
 
 using namespace cpe;
 
-vec3 raymarching(float jh, float iw, vec3 dir, std::vector<cloud> Clouds) {
+vec3 raymarching(float jh, float iw, vec3 dir, float angle, std::vector<cloud> Clouds) {
     
     int nbSample = 64;
     float zMax = 40.0f;
     float step = zMax/float(nbSample);
-    vec3 p = vec3(jh, iw, 0.0f);
     float T = 2.0f;
     float absorption = 90.0f;
     float b = 2.0f;
     vec3 color = vec3(0.0f,0.0f,0.0f);
     //vec4 color = vec4(0.0f,0.0f,0.0f,0.0f);
     //vec4 color = vec4(135.0f,206.0f,235.0f,1.0f)/255; //bleu ciel
+    vec3 p;
+
+    if(angle <= M_PI/2){
+        p = vec3(jh*cos(angle),iw,jh*sin(angle));
+    }
+    else if(angle <= M_PI){
+        p = vec3(-(1-jh)*cos(angle),iw,jh*sin(angle)-cos(angle));
+    }
+    else if(angle <= 3*M_PI/2){
+        p = vec3(-(1.0f-jh)*cos(angle)-sin(angle),iw,-cos(angle)-(1.0f-jh)*sin(angle));
+    }
+    else {
+        p = vec3(-sin(angle)+jh*cos(angle),iw,-(1.0f-jh)*sin(angle));
+    }
 
     int nbSampleLight = 6;
     float zMaxLight = 20.0f;
@@ -31,13 +45,13 @@ vec3 raymarching(float jh, float iw, vec3 dir, std::vector<cloud> Clouds) {
     vec3 sun_direction = normalized(vec3(2.0f,1.0f,1.0f));
     float bLight = 0.0f;
 
-    float maxLength = norm(vec3(0.5f,0.5f,0.0f)+nbSample*dir);
+    float maxLength = norm(nbSample*dir);
 
     for(int k = 0; k<nbSample; k++)
     {
         float length = norm(p);
         float density = scene(p,b,Clouds);
-        // density *= filtre_abs(length, maxLength, false); // Application d'un filtre absolu
+        //density *= filtre_abs(length, maxLength, false); // Application d'un filtre absolu
         density *= filtre_gauss(length, maxLength, false); // Application d'un filtre gaussien
         if (density>0.0f){
             float tmp = density/float(nbSample);
@@ -53,7 +67,7 @@ vec3 raymarching(float jh, float iw, vec3 dir, std::vector<cloud> Clouds) {
             {
                 float lengthLight = norm(p+sun_direction*float(l)*stepLight);
                 float densityLight = scene(p+sun_direction*float(l)*stepLight,bLight,Clouds);
-                // densityLight *= filtre_abs(lengthLight, maxLengthLight, true); // Filtre absolu
+                //densityLight *= filtre_abs(lengthLight, maxLengthLight, true); // Filtre absolu
                 densityLight *= filtre_gauss(lengthLight, maxLengthLight, true); // Filtre gaussien
                 if(densityLight>0.)
                 	Tl *= 1. - densityLight * absorption/float(nbSample);
@@ -71,37 +85,61 @@ vec3 raymarching(float jh, float iw, vec3 dir, std::vector<cloud> Clouds) {
 }
 
 void render() {
+
+    std::chrono::high_resolution_clock::time_point start;
+    std::chrono::high_resolution_clock::time_point end;
+    std::chrono::high_resolution_clock::time_point total_start;
+    float diff;
+
     const int   width    = 512;
     const int   height   = 384;
     const float fov      = M_PI/3.;
-    std::vector<vec3> framebuffer(width*height);
     std::vector<cloud> Clouds = CloudsCreation();
+    int nbAngles = 180;
+    std::vector<vec3> framebuffer(width*height);
 
-    #pragma omp parallel for
-    for (int j = 0; j<height; j++) { // actual rendering loop
-        for (int i = 0; i<width; i++) {
-            float dir_x =  (i + 0.5) -  width/2.;
-            float dir_y = -(j + 0.5) + height/2.;    // this flips the image at the same time
-            float dir_z = height/(2.*tan(fov/2.));
+    start = std::chrono::high_resolution_clock::now();
+    total_start = std::chrono::high_resolution_clock::now();
 
-            vec3 dir = vec3(dir_x,dir_y,dir_z);
-            framebuffer[i+j*width] = raymarching(float(j)/float(height), float(i)/float(width), normalized(dir), Clouds);
+    for (int k = 0; k<nbAngles; k++)
+    {
+        float angle = float(k*2*M_PI)/float(nbAngles);
+
+        #pragma omp parallel for
+        for (int j = 0; j<height; j++) { // actual rendering loop
+            for (int i = 0; i<width; i++) {
+                float dir_x =  float(i)-float(width)/2.;
+                float dir_y = float(-j)+float(height)/2.;    // this flips the image at the same time
+                float dir_z = float(height)/(2.*tan(fov/2.));
+
+                vec3 dir(dir_x*cos(angle)+dir_z*sin(angle),dir_y,dir_z*cos(angle)+dir_x*sin(angle));
+
+                framebuffer[i+j*width] = raymarching(float(j)/float(height), float(i)/float(width), normalized(dir), angle, Clouds);
+            }
         }
-    }
 
-    std::ofstream ofs; // save the framebuffer to file
-    ofs.open("./out.ppm", std::ios::binary);
-    ofs << "P6\n" << width << " " << height << "\n255\n";
-    for (vec3 &c : framebuffer) {
-        float max = std::max(c[0], std::max(c[1], c[2]));
-        if (max>1){
-             c = vec3(1.0f,0.0f,0.0f);
-             max = 1;
+        std::ofstream ofs; // save the framebuffer to file
+        ofs.open("../Pictures/Gif/out"+std::to_string(k)+".ppm", std::ios::binary);
+        ofs << "P6\n" << width << " " << height << "\n255\n";
+        for (vec3 &c : framebuffer) {
+            float max = std::max(c[0], std::max(c[1], c[2]));
+            if (max>1){
+                c = c/max;
+                max = 1;
+            }
+            c = max * c + (1-max) * vec3(135.0f,206.0f,235.0f)/255;
+            ofs << (char)(255 * c[0]) << (char)(255 * c[1]) << (char)(255 * c[2]);
         }
-        c = max * vec3(1.0f,1.0f,1.0f) + (1-max) * vec3(135.0f,206.0f,235.0f)/255;
-        ofs << (char)(255 * c[0]) << (char)(255 * c[1]) << (char)(255 * c[2]);
+        ofs.close();
+
+        end = std::chrono::high_resolution_clock::now();
+        diff = float((end-start).count());
+        std::cout<<"Image "+std::to_string(k+1)+": "<<100./(float(diff) / std::nano::den)<<" s"<<std::endl;
+        start = end;
     }
-    ofs.close();
+    
+    diff = (end-total_start).count();
+    std::cout<<"Temps total de construction : "<<100./(float(diff) / std::nano::den)<<" s"<<std::endl;
 }
 
 int main() {

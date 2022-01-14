@@ -50,16 +50,16 @@ float noise (vec3 x)
 float fbm(vec3 p)
 {
     float f;
-    f  = 0.5000*noise( p ); p = m*p*2.03;
-    f += 0.2500*noise( p ); p = m*p*2.04;
-    f += 0.1250*noise( p );
+    f  = 0.6000*noise( p ); p = m*p*2.03;
+    f += 0.3500*noise( p ); p = m*p*2.04;
+    f += 0.2000*noise( p );
     return f;
 }
 
 float filtre_abs(float length, float maxL, bool light)
 {
     if(light){
-        return std::fabs(length/maxL);
+        return 0.8f*std::fabs(length/maxL);
     } else {
         return 0.6f*(1.0f-std::fabs(length/maxL));
     }
@@ -70,7 +70,7 @@ float filtre_gauss(float length, float maxL, bool light)
     if(light){
         return 1.0f-std::exp(-std::fabs(length/maxL));
     } else {
-        return 0.6f*std::exp(-std::fabs(length/maxL));
+        return 0.4f*std::exp(-std::fabs(length/maxL));
     }
 }
 
@@ -79,16 +79,16 @@ std::vector<cloud> CloudsCreation()
     //Creation Clouds
     std::vector<cloud> Clouds;
 
-    vec3 c1(0.5f,0.5f,0.0f);
+    vec3 c1(0.35f,0.5f,0.5f);
     float w1 = 1.5f;
-    float f1 = 20.0f;
+    float f1 = 25.0f;
     cloud nuage1(c1,w1,f1);
 
     Clouds.push_back(nuage1);
 
-    vec3 c2(0.5f,0.5f,0.2f);
-    float w2 = 1.0f;
-    float f2 = 25.0f;
+    vec3 c2(0.65f,0.5f,0.5f);
+    float w2 = 1.5f;
+    float f2 = 20.0f;
     cloud nuage2(c2,w2,f2);
 
     Clouds.push_back(nuage2);
