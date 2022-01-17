@@ -79,15 +79,15 @@ std::vector<cloud> CloudsCreation()
     //Creation Clouds
     std::vector<cloud> Clouds;
 
-    vec3 c1(0.35f,0.5f,0.5f);
+    vec3 c1(0.25f,0.5f,0.35f);
     float w1 = 1.5f;
     float f1 = 25.0f;
     cloud nuage1(c1,w1,f1);
 
     Clouds.push_back(nuage1);
 
-    vec3 c2(0.65f,0.5f,0.5f);
-    float w2 = 1.5f;
+    vec3 c2(0.75f,0.5f,0.65f);
+    float w2 = 1.3f;
     float f2 = 20.0f;
     cloud nuage2(c2,w2,f2);
 
