@@ -61,16 +61,16 @@ float filtre_abs(float length, float maxL, bool light)
     if(light){
         return 0.8f*std::fabs(length/maxL);
     } else {
-        return 0.6f*(1.0f-std::fabs(length/maxL));
+        return 0.3f*(1.0f-std::fabs(length/maxL));
     }
 }
 
 float filtre_gauss(float length, float maxL, bool light)
 {
     if(light){
-        return 1.0f-std::exp(-std::fabs(length/maxL));
+        return 0.05f*(1.0f-std::exp(-std::fabs(length/maxL)));
     } else {
-        return 0.4f*std::exp(-std::fabs(length/maxL));
+        return 0.1f*std::exp(-std::fabs(length/maxL));
     }
 }
 
@@ -79,15 +79,15 @@ std::vector<cloud> CloudsCreation()
     //Creation Clouds
     std::vector<cloud> Clouds;
 
-    vec3 c1(0.25f,0.5f,0.35f);
-    float w1 = 1.5f;
+    vec3 c1(0.5f,0.45f,0.25f);
+    float w1 = 2.0f;
     float f1 = 25.0f;
     cloud nuage1(c1,w1,f1);
 
     Clouds.push_back(nuage1);
 
-    vec3 c2(0.75f,0.5f,0.65f);
-    float w2 = 1.3f;
+    vec3 c2(0.5f,0.65f,0.55f);
+    float w2 = 2.0f;
     float f2 = 20.0f;
     cloud nuage2(c2,w2,f2);
 

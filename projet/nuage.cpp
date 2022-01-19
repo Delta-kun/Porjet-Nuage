@@ -16,31 +16,31 @@ using namespace cpe;
 vec3 raymarching(float jh, float iw, vec3 dir, float angle, std::vector<cloud> Clouds) {
     
     int nbSample = 64;
-    float zMax = 40.0f;
+    float zMax = 1.0f;
     float step = zMax/float(nbSample);
     float T = 2.0f;
-    float absorption = 90.0f;
-    float b = 5.0f;
+    float absorption = 220.0f;
+    float b = 2.0f;
     vec3 color = vec3(0.0f,0.0f,0.0f);
     //vec4 color = vec4(0.0f,0.0f,0.0f,0.0f);
     //vec4 color = vec4(135.0f,206.0f,235.0f,1.0f)/255; //bleu ciel
     vec3 p;
 
     if(angle <= M_PI/2){
-        p = vec3(jh*cos(angle),iw,(1.0f-jh)*sin(angle));
+        p = vec3(jh*cos(angle)+(1.0f-jh)*sin(angle),iw,jh*sin(angle));
     }
     else if(angle <= M_PI){
-        p = vec3(-(1-jh)*cos(angle),iw,(1.0f-jh)*sin(angle)-cos(angle));
+        p = vec3((1.0f-jh)*sin(angle)-cos(angle),iw,jh*sin(angle)-cos(angle));
     }
     else if(angle <= 3*M_PI/2){
-        p = vec3(-(1.0f-jh)*cos(angle)-sin(angle),iw,-cos(angle)-jh*sin(angle));
+        p = vec3(-jh*cos(angle)-jh*sin(angle),iw,-cos(angle)-(1.0f-jh)*sin(angle));
     }
     else {
-        p = vec3(-sin(angle)+jh*cos(angle),iw,-jh*sin(angle));
+        p = vec3(-jh*sin(angle)+jh*cos(angle),iw,-(1.0f-jh)*sin(angle));
     }
 
     int nbSampleLight = 6;
-    float zMaxLight = 20.0f;
+    float zMaxLight = 40.0f;
     float stepLight = zMaxLight/float(nbSampleLight);
     vec3 sun_direction = normalized(vec3(2.0f,1.0f,1.0f));
     float bLight = 0.0f;
@@ -93,9 +93,9 @@ void render() {
 
     const int   width    = 512;
     const int   height   = 384;
-    const float fov      = M_PI/2.;
+    const float fov      = M_PI/3.;
     std::vector<cloud> Clouds = CloudsCreation();
-    int nbAngles = 10;
+    int nbAngles = 60;
     std::vector<vec3> framebuffer(width*height);
 
     start = std::chrono::high_resolution_clock::now();
@@ -109,7 +109,7 @@ void render() {
             for (int i = 0; i<width; i++) {
                 float dir_x =  float(i)-float(width)/2.;
                 float dir_y = float(-j)+float(height)/2.;    // this flips the image at the same time
-                float dir_z = float(height)/(2.*tan(fov/2.));
+                float dir_z = float(height)/(2.*tan(fov));
 
                 vec3 dir(dir_x*cos(angle)-dir_z*sin(angle),dir_y,dir_z*cos(angle)+dir_x*sin(angle));
 
@@ -118,12 +118,13 @@ void render() {
         }
 
         std::ofstream ofs; // save the framebuffer to file
-        ofs.open("../Pictures/Gif/out"+std::to_string(k)+".ppm", std::ios::binary);
+        if(k<10) ofs.open("../Pictures/Gif/out0"+std::to_string(k)+".ppm", std::ios::binary);
+        else ofs.open("../Pictures/Gif/out"+std::to_string(k)+".ppm", std::ios::binary);
         ofs << "P6\n" << width << " " << height << "\n255\n";
         for (vec3 &c : framebuffer) {
             float max = std::max(c[0], std::max(c[1], c[2]));
             if (max>1){
-                c = c/max;
+                c = vec3(1.0f,0.0f,0.0f);
                 max = 1;
             }
             c = max * vec3(1.0f,1.0f,1.0f) + (1-max) * vec3(135.0f,206.0f,235.0f)/255;
